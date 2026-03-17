@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://steppein.com/sitemap.xml
