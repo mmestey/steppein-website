@@ -38,7 +38,7 @@
     <!-- Firebase SDK (for waitlist signups) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyAmJzKs48S7XfpqaPMIQUdXdXYXvbkfjK0",
@@ -67,14 +67,6 @@
             if (msg) msg.style.display = 'none';
 
             try {
-                // Check for duplicate
-                const existing = await getDocs(query(collection(db, 'waitlist'), where('email', '==', email)));
-                if (!existing.empty) {
-                    showMessage(form, 'You\'re already on the list! We\'ll be in touch soon. 🎉', 'success');
-                    btn.textContent = 'Already Signed Up ✓';
-                    return;
-                }
-
                 await addDoc(collection(db, 'waitlist'), {
                     email: email,
                     source: form.querySelector('input[name="source"]')?.value || 'website',
