@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SteppeIn - The #1 App for Agricultural Jobs</title>
-    <meta name="description" content="SteppeIn connects farm workers with agricultural jobs instantly. Same-day pay, verified employers, and thousands of jobs.">
+    <title>SteppeIn - Find Farm Jobs & Get Paid Fast</title>
+    <meta name="description" content="SteppeIn connects farm workers with agricultural jobs. Same-day pay, verified employers, and jobs across America. Free for workers.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon-boot.png">
     <link rel="apple-touch-icon" href="images/favicon-boot.png">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="SteppeIn - The #1 App for Agricultural Jobs">
+    <meta property="og:title" content="SteppeIn - Find Farm Jobs & Get Paid Fast">
     <meta property="og:description" content="Find farm work instantly. Same-day pay, verified employers.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://steppein.com">
@@ -19,7 +19,7 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SteppeIn - The #1 App for Agricultural Jobs">
+    <meta name="twitter:title" content="SteppeIn - Find Farm Jobs & Get Paid Fast">
     <meta name="twitter:description" content="Find farm work instantly. Same-day pay, verified employers.">
     <meta name="twitter:image" content="https://steppein.com/images/steppein-full-logo.png">
     
@@ -45,6 +45,11 @@
             var email = emailInput.value.trim().toLowerCase();
 
             if (!email) return;
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage(form, 'Please enter a valid email address.', 'error');
+                btn.disabled = false;
+                return;
+            }
 
             btn.disabled = true;
             btn.textContent = 'Submitting...';
@@ -1537,7 +1542,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge">
-                        <span>#1</span> Mobile Gig Platform Built for Agriculture
+                        <span>NEW</span> The App Built for Agriculture
                     </div>
                     <h1>Find Farm Work <span class="highlight">Instantly</span></h1>
                     <p class="hero-subtitle">The only app built specifically for agricultural workers and farms. Get hired today, get paid today.</p>
@@ -1841,7 +1846,7 @@
                 <div class="early-access-content">
                     <div class="early-access-icon">🌱</div>
                     <h3>Be First in Line</h3>
-                    <p>We're finalizing our plans to make sure they work for farms of every size — from family operations to large commercial growers. Sign up now to lock in early-bird pricing and be the first to post jobs when we launch.</p>
+                    <p>SteppeIn is launching soon. Whether you're looking for farm work or hiring seasonal help, sign up now to get early access and be the first to know when we go live.</p>
                     <div class="early-access-features">
                         <div class="ea-feature">
                             <span class="ea-check">✓</span>
@@ -1865,7 +1870,7 @@
                         <input type="hidden" name="source" value="pricing-section">
                         <button type="submit" class="btn btn-primary">Get Early Access</button>
                     </form>
-                    <p class="ea-note">Join 50+ farms already on the waitlist. No spam, just launch updates.</p>
+                    <p class="ea-note">No spam, just launch updates. Free for workers — always.</p>
                 </div>
             </div>
         </div>
@@ -1877,7 +1882,7 @@
     <section class="cta-section" id="download">
         <div class="container">
             <h2>Ready to Transform Agricultural Work?</h2>
-            <p>Join thousands of workers and hundreds of farms already using SteppeIn.</p>
+            <p>Be among the first workers and farms to experience SteppeIn when we launch.</p>
             <div class="cta-buttons">
                 <span class="app-btn btn-coming-soon">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
@@ -1943,7 +1948,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="brand-name">SteppeIn</div>
-                    <p>The #1 app for agricultural jobs. Connecting workers and farms across America.</p>
+                    <p>The app for agricultural jobs. Connecting workers and farms across America.</p>
                     <div class="footer-social">
                         <a href="mailto:hello@steppein.com" title="Email us">✉</a>
                     </div>
