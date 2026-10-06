@@ -233,8 +233,8 @@
         }
 
         .logo-icon {
-            width: 120px;
-            height: 120px;
+            width: 52px;
+            height: 52px;
             object-fit: contain;
             border-radius: 12px;
         }
@@ -270,24 +270,45 @@
 
         /* Hero Section */
         .hero {
-            min-height: auto;
-            background: linear-gradient(160deg, var(--forest) 0%, #0a1f15 100%);
+            min-height: 100vh;
+            background: var(--forest-dark);
             display: flex;
             align-items: center;
-            padding: 140px 0 60px;
+            padding: 110px 0 60px;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        .hero-video-bg {
             position: absolute;
-            top: -30%;
-            right: -10%;
-            width: 70%;
-            height: 140%;
-            background: radial-gradient(ellipse, rgba(82, 183, 136, 0.12) 0%, transparent 60%);
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(13,40,24,0.82) 0%, rgba(27,67,50,0.7) 50%, rgba(13,40,24,0.75) 100%);
+            z-index: 1;
+        }
+
+        .hero > .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-phones .phone-mockup {
+            width: 320px;
+            border-radius: 40px;
+            background: #000;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5), 0 0 0 6px rgba(255,255,255,0.12), 0 0 80px rgba(82,183,136,0.25);
         }
 
         .hero-content {
@@ -1538,48 +1559,45 @@
 
     <!-- Hero -->
     <section class="hero">
+        <video class="hero-video-bg" autoplay muted loop playsinline poster="steppein-browse-jobs.png">
+            <source src="videos/hero-farm.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge">
-                        <span>NEW</span> The App Built for Agriculture
+                        <span>NEW</span> The Agricultural Job App
                     </div>
                     <h1>Find Farm Work <span class="highlight">Instantly</span></h1>
-                    <p class="hero-subtitle">The only app built specifically for agricultural workers and farms. Get hired today, get paid today.</p>
+                    <p class="hero-subtitle">The only modern, mobile-first app built for agricultural workers and farms. Fast hiring, flexible payouts.</p>
                     <div class="hero-buttons">
-                        <span class="btn btn-primary btn-coming-soon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-                            iOS — Coming Soon
-                        </span>
-                        <span class="btn btn-outline btn-coming-soon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
-                            Android — Coming Soon
-                        </span>
+                        <a href="#pricing" class="btn btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                            Join the Waitlist
+                        </a>
+                        <a href="#features" class="btn btn-outline">
+                            Learn More
+                        </a>
                     </div>
-                    <form class="hero-form" onsubmit="submitWaitlist(event)">
-                        <input type="email" name="email" placeholder="Enter your email for early access" required>
-                        <input type="hidden" name="source" value="hero-section">
-                        <button type="submit" class="btn btn-primary">Get Early Access</button>
-                    </form>
-                    <p class="hero-form-note">Free for workers — always. No spam, just launch updates.</p>
                     <div class="hero-stats">
                         <div class="hero-stat">
-                            <div class="hero-stat-number">6</div>
-                            <div class="hero-stat-label">States Covered</div>
+                            <div class="hero-stat-number">56%</div>
+                            <div class="hero-stat-label">Of US Farmers Report Labor Shortages</div>
                         </div>
                         <div class="hero-stat">
-                            <div class="hero-stat-number">876M</div>
-                            <div class="hero-stat-label">Acres of Farmland</div>
+                            <div class="hero-stat-number">$3.1B</div>
+                            <div class="hero-stat-label">Annual Crop Losses from Unfilled Positions</div>
                         </div>
                         <div class="hero-stat">
-                            <div class="hero-stat-number">$45B</div>
-                            <div class="hero-stat-label">Market Opportunity</div>
+                            <div class="hero-stat-number">2.4M</div>
+                            <div class="hero-stat-label">Agricultural Workers in the US</div>
                         </div>
                     </div>
                 </div>
-                <div class="hero-phone">
-                    <div class="phone-frame" style="opacity:1; transform:none;">
-                        <img src="steppein-login-screen.png" alt="SteppeIn App Login" class="phone-screen">
+                <div class="hero-phones">
+                    <div class="phone-mockup">
+                        <img src="images/app-auth-screen.png" alt="SteppeIn App">
                     </div>
                 </div>
             </div>
@@ -1591,28 +1609,28 @@
         <div class="container">
             <div class="proof-items">
                 <div class="proof-item">
-                    <div class="proof-icon">🔒</div>
+                    <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
                     <div class="proof-text">
                         <strong>Verified Employers</strong>
                         <span>Every farm is vetted</span>
                     </div>
                 </div>
                 <div class="proof-item">
-                    <div class="proof-icon">⚡</div>
+                    <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
                     <div class="proof-text">
                         <strong>Same-Day Pay</strong>
                         <span>Get paid instantly</span>
                     </div>
                 </div>
                 <div class="proof-item">
-                    <div class="proof-icon">📍</div>
+                    <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
                     <div class="proof-text">
                         <strong>GPS-Powered</strong>
                         <span>Jobs near you</span>
                     </div>
                 </div>
                 <div class="proof-item">
-                    <div class="proof-icon">🌐</div>
+                    <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4332" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div>
                     <div class="proof-text">
                         <strong>Bilingual</strong>
                         <span>English & Spanish</span>
@@ -1632,17 +1650,17 @@
             </div>
             <div class="problem-grid">
                 <div class="problem-card">
-                    <div class="problem-icon">😰</div>
+                    <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
                     <h3>Unreliable Work</h3>
                     <p>Workers drive hours only to find no work available. Word-of-mouth leads to missed opportunities.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon">💸</div>
+                    <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                     <h3>Delayed Payments</h3>
                     <p>Waiting weeks for paychecks. Cash-only arrangements with no records or financial security.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="problem-icon">🚫</div>
+                    <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#be123c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><circle cx="12" cy="12" r="10"/><line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/></svg></div>
                     <h3>Middlemen Fees</h3>
                     <p>Staffing agencies take 25-40% of wages. Workers earn less, farms pay more.</p>
                 </div>
@@ -1656,33 +1674,33 @@
             <div class="solution-content">
                 <div>
                     <span class="section-label">The Solution</span>
-                    <h2>SteppeIn Changes Everything</h2>
+                    <h2>Built for the Field, Not the Office</h2>
                     <p style="color: var(--slate); margin-bottom: 48px; font-size: 1.15rem;">The modern way to find and post agricultural jobs. Built for mobile, designed for the field.</p>
                     
                     <div class="solution-features">
                         <div class="solution-feature">
-                            <div class="feature-icon">📱</div>
+                            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
                             <div class="feature-text">
                                 <h4>Mobile-First Design</h4>
                                 <p>Apply to jobs from anywhere. No computer needed. Works offline too.</p>
                             </div>
                         </div>
                         <div class="solution-feature">
-                            <div class="feature-icon">⚡</div>
+                            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
                             <div class="feature-text">
                                 <h4>Same-Day Pay <span style="font-size:0.7em; font-weight:600; color:var(--sage); background:rgba(0,0,0,0.05); padding:2px 8px; border-radius:10px; vertical-align:middle;">Coming soon</span></h4>
                                 <p>Get paid as soon as work is complete. Direct deposit to your bank.</p>
                             </div>
                         </div>
                         <div class="solution-feature">
-                            <div class="feature-icon">✅</div>
+                            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
                             <div class="feature-text">
                                 <h4>Verified Employers</h4>
                                 <p>Every farm is vetted. Know who you're working for before you arrive.</p>
                             </div>
                         </div>
                         <div class="solution-feature">
-                            <div class="feature-icon">📍</div>
+                            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
                             <div class="feature-text">
                                 <h4>Jobs Near You</h4>
                                 <p>GPS-powered job matching. Find work within miles, not hours.</p>
@@ -1762,7 +1780,7 @@
             <div class="section-header">
                 <span class="section-label">Market Opportunity</span>
                 <h2>A $45B Market Ready for Disruption</h2>
-                <p>876 million acres of farmland. 2.4 million farm workers. One app to connect them all.</p>
+                <p>876 million acres of farmland. 2.4 million farm workers. Half of all farms report labor shortages.</p>
             </div>
             
             <div class="market-content">
@@ -1850,7 +1868,7 @@
             
             <div class="early-access-box">
                 <div class="early-access-content">
-                    <div class="early-access-icon">🌱</div>
+                    <div class="early-access-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#52B788" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="44" height="44"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></div>
                     <h3>Be First in Line</h3>
                     <p>SteppeIn is launching soon. Whether you're looking for farm work or hiring seasonal help, sign up now to get early access and be the first to know when we go live.</p>
                     <div class="early-access-features">
